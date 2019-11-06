@@ -1,0 +1,11 @@
+.idea
+/target/*
+/logs/*
+.mvn
+HELP.md
+*.log
+.settings
+*.class
+/bin/*
+application.properties
+keystore.p12
