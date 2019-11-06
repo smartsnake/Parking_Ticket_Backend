@@ -1,12 +1,5 @@
 version: "2.1"
 services:
-  frontend:
-    image: frontend-demo
-    container_name: frontend-demo
-    ports:
-      - 4200:4200
-    depends_on:
-      - app
   app:
     # replace imageName with your image name (block in your case)
     image: mongorest-demo

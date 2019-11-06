@@ -34,7 +34,7 @@ public class PointRestController {
 	//create new point
 	@RequestMapping(value = "/point/", method = RequestMethod.POST)
 	public ResponseEntity<?> saveInvoice(@Valid @RequestBody Point savePoint) {
-		
+		//TODO: Add validation here, Make sure that Point is not null and the coords and time is valid.
 		return new ResponseEntity<>(repository.save(savePoint), HttpStatus.CREATED);
 	}
 
