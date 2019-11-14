@@ -20,7 +20,7 @@ public class PointRestController {
 
 	//return list of all points
 	@RequestMapping(value = "/points/", method = RequestMethod.GET)
-	public ResponseEntity<?> getAllInvoices()
+	public ResponseEntity<?> getAllPoints()
 	{
 		List<Point> inv = repository.findAll();
 		if(inv == null) {
@@ -32,9 +32,14 @@ public class PointRestController {
 	}
 	
 	//create new point
-	@RequestMapping(value = "/point/", method = RequestMethod.POST)
-	public ResponseEntity<?> saveInvoice(@Valid @RequestBody Point savePoint) {
+	@RequestMapping(value = "/point/", method = RequestMethod.POST, produces="application/json")
+	public ResponseEntity<?> savePoint(@Valid @RequestBody Point savePoint) {
 		//TODO: Add validation here, Make sure that Point is not null and the coords and time is valid.
+		if(savePoint == null){
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+
+
 		return new ResponseEntity<>(repository.save(savePoint), HttpStatus.CREATED);
 	}
 
