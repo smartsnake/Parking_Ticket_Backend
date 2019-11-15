@@ -30,6 +30,7 @@ public class PointRestController {
 			return new ResponseEntity<>(inv,HttpStatus.OK);
 		}
 	}
+	//this is a comment
 	
 	//create new point
 	@RequestMapping(value = "/point/", method = RequestMethod.POST, produces="application/json")
