@@ -7,5 +7,5 @@ ARG JAR_FILE=target/backend-0.1.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://192.168.1.24:27017", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-Dspring.data.mongodb.uri=192.168.1.15:27017", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 

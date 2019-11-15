@@ -3,15 +3,16 @@ services:
   app:
     # replace imageName with your image name (block in your case)
     image: mongorest-demo
+    #build: .
     container_name: mongorest-demo
     ports:
       - 8080:8080 # Replace the port of your application here if used
-    depends_on: 
-      - mongo
-  mongo:
-    image: mongo
-    container_name: mongo
-    volumes:
-      - ~/data:/data/db
-    ports:
-      - 27017:27017
+#    depends_on:
+#      - mongo
+#  mongo:
+#    image: mongo
+#    container_name: mongo
+#    volumes:
+#      - ~/data:/data/db
+#    ports:
+#      - 27017:27017
