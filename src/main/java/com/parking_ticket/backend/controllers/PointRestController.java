@@ -33,7 +33,7 @@ public class PointRestController {
 
 	//return list of all points within two times
 	@RequestMapping(value = "/points", method = RequestMethod.GET)
-	public ResponseEntity<?> getAllPointsWithinTimes(@RequestParam(name = "time1")long time1, @RequestParam(name = "time2")long time2)
+	public ResponseEntity<?> findByAllPointsWithinTimes(@RequestParam long time1, @RequestParam long time2)
 	{
 		List<Point> inv = repository.findAll();
 		if(inv == null) {
