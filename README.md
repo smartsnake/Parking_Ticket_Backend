@@ -16,6 +16,8 @@ RESTful API that interacts with a MongoDB database containing an arbitrary point
  
  ## List All Points
 `curl -i -s -X GET http://localhost:8080/points/`
+ ## Get points within time
+ `curl -i -s -X GET http://localhost:8080/points?time1={time1}&time2={time2}`
  ## Create Point
  `curl -i -s -H "Content-Type: application/json" -X POST -d '{Point JSON payload}' http://localhost:8080/point/`
 
