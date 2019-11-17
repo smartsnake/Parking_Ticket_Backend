@@ -1,13 +1,11 @@
 version: "3.1"
 services:
   app:
-    # replace imageName with your image name (block in your case)
-    #image: mongorest-demo
     build: .
     restart: always
     container_name: mongorest-demo
     ports:
-      - 8081:8081 # Replace the port of your application here if used
+      - 8080:8080 # Replace the port of your application here if used
     depends_on:
       - mongo
   mongo:
