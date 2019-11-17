@@ -32,8 +32,8 @@ public class PointRestController {
 	}
 
 	//return list of all points within two times
-	@RequestMapping(value = "/points/", method = RequestMethod.GET)
-	public ResponseEntity<?> getAllPointsWithinTimes(long time1, long time2)
+	@RequestMapping(value = "/points", method = RequestMethod.GET)
+	public ResponseEntity<?> getAllPointsWithinTimes(@RequestParam(name = "time1")long time1, @RequestParam(name = "time2")long time2)
 	{
 		List<Point> inv = repository.findAll();
 		if(inv == null) {
@@ -42,7 +42,7 @@ public class PointRestController {
 		else {
 			for(Iterator<Point> iter = inv.iterator(); iter.hasNext();) {
 				Point a = iter.next();
-				if(a.gettime() < time1 || a.gettime() > time2)) {
+				if(a.gettime() < time1 || a.gettime() > time2) {
 					iter.remove();
 				}
 			}
