@@ -5,7 +5,6 @@ RESTful API that interacts with a MongoDB database containing an arbitrary point
 # Example Point JSON structure
 ```
 {
-  "_id" : "1",
   "lat" : 57.8907,
   "lon" : 27.9876,
   "time" : 12345678987654
