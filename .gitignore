@@ -9,3 +9,5 @@ HELP.md
 /bin/*
 application.properties
 keystore.p12
+.classpath
+.factorypath
