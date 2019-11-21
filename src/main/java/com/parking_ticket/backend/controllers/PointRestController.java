@@ -30,7 +30,25 @@ public class PointRestController {
 			return new ResponseEntity<>(inv,HttpStatus.OK);
 		}
 	}
-	//this is a comment
+
+	//return list of all points within two times
+	@RequestMapping(value = "/points", method = RequestMethod.GET)
+	public ResponseEntity<?> findByAllPointsWithinTimes(@RequestParam long time1, @RequestParam long time2)
+	{
+		List<Point> inv = repository.findAll();
+		if(inv == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		else {
+			for(Iterator<Point> iter = inv.iterator(); iter.hasNext();) {
+				Point a = iter.next();
+				if(a.gettime() < time1 || a.gettime() > time2) {
+					iter.remove();
+				}
+			}
+			return new ResponseEntity<>(inv,HttpStatus.OK);
+		}
+	}
 	
 	//create new point
 	@RequestMapping(value = "/point/", method = RequestMethod.POST, produces="application/json")
